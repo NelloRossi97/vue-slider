@@ -51,8 +51,9 @@ createApp({
         stopInterval(){
             clearInterval(this.interval);
         },
-        mounted(){
-            this.startInterval();
-        }
+        
+    },
+    mounted(){
+        this.startInterval();
     }
 }).mount('#app')
