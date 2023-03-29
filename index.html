@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+        <link rel="stylesheet" href="./css/style.css">
+        <title>Vue Slider</title>
+    </head>
+    <body>
+
+        <div id="app">
+            <div class="container d-flex justify-content-center align-items-center vh-100">
+                <div class="carousel-container d-flex">
+                    <div id="images" class="images w-75 h-100 d-flex justify-content-center">
+
+                    </div>
+                    <div id="thumbs" class="thumbs w-25 h-100 d-flex flex-column position-relative">
+                    
+    
+                        <button id="prev" class="position-absolute btn btn-secondary"><i class="fa-solid fa-arrow-up"></i></button>
+                        <button id="next" class="position-absolute btn btn-secondary"><i class="fa-solid fa-arrow-down"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <script src="./js/script.js"></script>
+    </body>
+</html>
