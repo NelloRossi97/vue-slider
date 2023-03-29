@@ -43,3 +43,7 @@ img{
 button{
     z-index: 1000;
 }
+.info{
+    bottom: 0;
+    background-color: rgba(38, 38, 38, 0.7);
+}

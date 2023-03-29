@@ -14,21 +14,27 @@
             <div class="container d-flex justify-content-center align-items-center vh-100">
                 <div class="carousel-container d-flex">
 
-                    <div id="images" class="images w-75 h-100 d-flex justify-content-center">
+                    <div id="images" class="images w-75 h-100 d-flex justify-content-center position-relative">
                         <img :src="images[indexImg].image" :alt="images.title">
+                        <div class="info position-absolute text-white w-100 text-center">
+                            {{images[indexImg].text}}
+                        </div>
                     </div>
 
                     <div class="thumbs w-25 position-relative">
 
                         <div class="thumb w-100 d-flex flex-column" v-for="(image, index) in images">
-                            <img class="w-100 h-100 object-fit-cover d-block" :src="images[index].image" :alt="images.title">
+                            <img class="w-100 h-100 object-fit-cover d-block" :class="'active'[indexImg]" :src="images[index].image" :alt="images.title">
                         </div>
 
                         <button id="prev" class="position-absolute btn btn-primary" @click="prevImg"><i class="fa-solid fa-arrow-up"></i></button>
                         <button id="next" class="position-absolute btn btn-primary" @click="nextImg"><i class="fa-solid fa-arrow-down"></i></button>
                     </div>
+                    
                 </div>
+                
             </div>
+            
         </div>
 
         <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
