@@ -1,0 +1,45 @@
+:root{
+    --nr-dark: #262626;
+}
+
+body{
+    background-color: var(--nr-dark);
+}
+
+.carousel-container{
+    background-color: grey;
+    width: 1200px;
+    height: 600px;
+}
+.thumb{
+    height: calc(100% / 5);
+}
+img{
+    max-width: 100%;
+    object-fit: contain;
+}
+.thumbs{
+    border-left: 1px solid black;
+}
+
+#prev{
+    top: 0;
+    left: calc(50% - 19px);
+}
+
+#next{
+    bottom: 0;
+    left: calc(50% - 19px);
+}
+
+.active{
+    border: 5px solid white;
+    opacity: 1!important;
+}
+
+.opacity{
+    opacity: 0.5;
+}
+button{
+    z-index: 1000;
+}
