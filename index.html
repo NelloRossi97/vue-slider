@@ -12,6 +12,7 @@
 
         <div id="app">
             <div class="container d-flex justify-content-center align-items-center vh-100">
+                <!-- on mouse over stop the autoscroll and on mouse leave start the autoscroll-->
                 <div class="carousel-container d-flex" @mouseover="stopInterval()"
                 @mouseleave="startInterval()">
 
@@ -23,14 +24,18 @@
                     </div>
 
                     <div class="thumbs w-25 position-relative">
-
-                        <div class="thumb w-100 d-flex flex-column" v-for="(image, index) in images">
-                            <div class="h-100" :class="{ 'active' : index === indexImg }">
-                                <img class="w-100 h-100 object-fit-cover d-block opacity"  :src="images[index].image" :alt="images.title" >
+                        <!-- create all the thumb with a v-for in the images array -->
+                        <!-- than on click on a slide change to the one clicked -->
+                        <!-- than giving a class active if the element is selected else a class opacity-->
+                        <div class="thumb w-100 d-flex flex-column" v-for="(image, index) in images" @click="changeSlide(index)" :class="index === indexImg ? 'active' : 'opacity'">
+                            <div class="h-100">
+                                <img class="w-100 h-100 object-fit-cover d-block"  :src="images[index].image" :alt="images.title">
                             </div>
                         </div>
 
+                        <!-- button previous image calling the function prevImg on click -->
                         <button id="prev" class="position-absolute btn btn-primary" @click="prevImg"><i class="fa-solid fa-arrow-up"></i></button>
+                        <!-- button next image calling the function nextImg on click -->
                         <button id="next" class="position-absolute btn btn-primary" @click="nextImg"><i class="fa-solid fa-arrow-down"></i></button>
                     </div>
                     

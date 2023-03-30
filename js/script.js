@@ -3,6 +3,7 @@ const { createApp } = Vue;
 createApp({
     data(){
         return {
+            //array of images
             images: [
                 {
                     image: 'img/01.webp',
@@ -26,11 +27,14 @@ createApp({
                     text: 'Marvel\'s Avengers is an epic, third-person, action-adventure game that combines an original, cinematic story with single-player and co-operative gameplay.',
                 }
             ],
+            //setting an index to control the slider
             indexImg: 0,
+            //setting a variable to control the autoscroll
             interval: 0
         }
     },
     methods: {
+        //function to go to the previous image
         prevImg(){
             if (this.indexImg === 0){
                 this.indexImg = this.images.length - 1;
@@ -38,6 +42,7 @@ createApp({
                 this.indexImg--;
             }
         },
+        //function to go to the next image
         nextImg(){
             if (this.indexImg === this.images.length - 1){
                 this.indexImg = 0;
@@ -45,14 +50,20 @@ createApp({
                 this.indexImg++;
             }
         },
+        //function to start the autoscroll
         startInterval(){
             this.interval = setInterval(this.nextImg, 3000);
         },
+        //function to stop the autoscroll
         stopInterval(){
             clearInterval(this.interval);
         },
-        
+        //function to change slide
+        changeSlide(index){
+            this.indexImg = index;
+        }    
     },
+    //when the page is mounted start the autoscroll
     mounted(){
         this.startInterval();
     }
